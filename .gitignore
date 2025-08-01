@@ -1,0 +1,4 @@
+schemas_lib.egg-info/
+__pycache__/
+.venv/
+build/
