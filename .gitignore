@@ -1,4 +1,6 @@
 schemas_lib.egg-info/
+Docker-compose.yml
+testing/
 __pycache__/
 .venv/
 build/
