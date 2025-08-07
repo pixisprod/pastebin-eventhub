@@ -15,5 +15,12 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 packages = [
-    "eventhub"
+    "eventhub",
+    "eventhub.avro",
+    "eventhub.confluent",
+    "eventhub.pydantic",
+    "eventhub.pydantic.auth_service",
+    "eventhub.pydantic.paste_service",
+    "eventhub.kafka.consumer",
+    "eventhub.kafka.producer",
 ]
