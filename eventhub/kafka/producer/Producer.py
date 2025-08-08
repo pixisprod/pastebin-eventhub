@@ -11,13 +11,12 @@ class Producer:
     ):
         self.__producer = AIOKafkaProducer(loop=loop, bootstrap_servers=server)
     
-    
-    async def __aenter__(self):
-        await self.__producer.start()
-        return self
 
-    
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
+    async def start(self):
+        await self.__producer.start()
+
+
+    async def stop(self):
         await self.__producer.stop()
 
     
