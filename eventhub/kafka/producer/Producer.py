@@ -20,5 +20,5 @@ class Producer:
         await self.__producer.stop()
 
     
-    async def send(self, topic: str, message: bytes) -> None:
-        await self.__producer.send(topic, message)
+    async def send(self, topic: str, message: bytes, key: bytes) -> None:
+        await self.__producer.send(topic, message, key)
