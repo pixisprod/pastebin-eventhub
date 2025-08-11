@@ -30,3 +30,9 @@ class ConfluentSRClient:
         r = await self.__client.get(f'/schemas/ids/{schema_id}')
         r.raise_for_status()
         return json.loads(r.json()['schema'])
+    
+
+    async def get_schema_id_by_subject(self, subject: str) -> int:
+        r = await self.__client.get(f'/subjects/{subject}/versions/latest')
+        r.raise_for_status()
+        return r.json()['id']
