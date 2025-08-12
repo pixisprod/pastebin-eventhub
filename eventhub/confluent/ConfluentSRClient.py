@@ -5,15 +5,10 @@ from httpx import AsyncClient
 
 class ConfluentSRClient:
     def __init__(self, server: str):
-        self.__server_url = server
+        self.__client = AsyncClient(base_url=server)
 
-    
-    async def __aenter__(self):
-        self.__client = AsyncClient(base_url=self.__server_url)
-        return self
-    
 
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
+    async def close(self):
         await self.__client.aclose()
 
 
