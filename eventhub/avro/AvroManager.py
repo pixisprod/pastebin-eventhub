@@ -8,7 +8,7 @@ import avro.io
 from eventhub.confluent.ConfluentSRClient import ConfluentSRClient
 
 
-class AvroManager:
+class SRAvroCodec:
     def __init__(self, confluent_client: ConfluentSRClient):
         self.__confluent = confluent_client
 
