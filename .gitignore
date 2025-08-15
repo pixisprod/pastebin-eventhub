@@ -1,4 +1,4 @@
-schemas_lib.egg-info/
+eventhub.egg-info/
 Docker-compose.yml
 uv.lock
 testing/
