@@ -11,7 +11,7 @@ class PasteSchema(BaseModel):
         max_length=config.paste.content_max_length,
         examples=['Example paste for docs..'],
     )
-    lifetime_seconds: str = Field(
+    lifetime_seconds: int = Field(
         ge=config.paste.lifetime_min_seconds,
         le=config.paste.lifetime_max_second,
     )
