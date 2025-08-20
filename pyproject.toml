@@ -19,9 +19,6 @@ packages = [
     "eventhub",
     "eventhub.avro",
     "eventhub.confluent",
-    "eventhub.pydantic",
-    "eventhub.pydantic.auth_service",
-    "eventhub.pydantic.paste_service",
     "eventhub.kafka.consumer",
     "eventhub.kafka.producer",
 ]
