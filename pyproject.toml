@@ -17,6 +17,7 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = [
     "eventhub",
+    "eventhub.auth"
     "eventhub.auth.jwt",
     "eventhub.avro",
     "eventhub.confluent",
