@@ -1,5 +1,5 @@
 [project]
-name = "eventhub"
+name = "shared_lib"
 version = "0.0.1"
 dependencies = []
 
