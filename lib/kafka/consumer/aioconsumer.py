@@ -11,7 +11,7 @@ class AioConsumer:
     def __init__(
         self, 
         consumer: AIOKafkaConsumer,
-        handlers: dict,
+        handlers: dict[str, Handler],
         to_check: str = 'event',
     ):
         self.__consumer = consumer
