@@ -1,11 +1,13 @@
 import json
+from typing import Callable, Awaitable
 
 from aiokafka import AIOKafkaConsumer, ConsumerRecord
 
-from . import EventConsumer
+
+Handler = Callable[[ConsumerRecord], Awaitable[None]]
 
 
-class AioConsumer(EventConsumer):
+class AioConsumer:
     def __init__(
         self, 
         consumer: AIOKafkaConsumer,
