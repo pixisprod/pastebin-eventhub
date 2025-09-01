@@ -2,10 +2,8 @@ import json
 
 from aiokafka import AIOKafkaProducer
 
-from . import EventPublisher
 
-
-class AioPublisher(EventPublisher):
+class AioPublisher:
     def __init__(self, producer: AIOKafkaProducer):
         self.__producer = producer
 
