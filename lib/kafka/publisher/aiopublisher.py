@@ -13,6 +13,6 @@ class AioPublisher(EventPublisher):
     async def publish(self, topic, key, value):
         self.__producer.send_and_wait(
             topic=topic,
-            key=str(key).encode(),
-            value=json.dumps(value).encode(),
+            key=key,
+            value=value,
         )
