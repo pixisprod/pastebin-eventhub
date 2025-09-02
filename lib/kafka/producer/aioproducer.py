@@ -3,7 +3,7 @@ import json
 from aiokafka import AIOKafkaProducer
 
 
-class AioPublisher:
+class AioProducer:
     def __init__(self, producer: AIOKafkaProducer):
         self.__producer = producer
 
