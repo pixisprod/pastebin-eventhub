@@ -8,7 +8,7 @@ class AioProducer:
         self.__producer = producer
 
     
-    async def publish(self, topic: str, key: bytes, value: bytes):
+    async def produce(self, topic: str, key: bytes, value: bytes):
         await self.__producer.send_and_wait(
             topic=topic,
             key=key,
