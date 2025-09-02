@@ -11,12 +11,18 @@ class AioConsumer:
     def __init__(
         self, 
         consumer: AIOKafkaConsumer,
-        handlers: dict[str, Handler],
         to_check: str = 'event',
     ):
         self.__consumer = consumer
-        self.__handlers = handlers
+        self.__handlers: dict = {}
         self.__to_check = to_check
+
+
+    def handler(self, event: str):
+        def decorator(func: Handler):
+            self.__handlers[event] = func
+            return func
+        return decorator
 
 
     async def __handle(self, msg: ConsumerRecord):
