@@ -1,1 +1,1 @@
-from .LinkTelegram import LinkTelegram
+from .LinkTelegram import LinkTelegramSchema
