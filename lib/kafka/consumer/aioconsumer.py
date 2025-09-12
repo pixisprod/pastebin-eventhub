@@ -1,7 +1,9 @@
 import json
+import asyncio
 from typing import Callable, Awaitable
 
 from aiokafka import AIOKafkaConsumer, ConsumerRecord
+from aiokafka.errors import KafkaConnectionError
 
 
 Handler = Callable[[ConsumerRecord], Awaitable[None]]
@@ -37,7 +39,13 @@ class AioConsumer:
 
 
     async def consume(self):
-        await self.__consumer.start()
+        while True:
+            try:
+                await self.__consumer.start()
+                break
+            except KafkaConnectionError:
+                print('Unable to connect to kafka, retrying in 5 seconds..')
+                await asyncio.sleep(5)
         try:
             async for msg in self.__consumer:
                 await self.__handle(msg)
